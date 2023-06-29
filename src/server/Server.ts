@@ -1,10 +1,9 @@
 import express from 'express'
+import {router} from './routes'
+
 
 const server = express()
-
-server.get('/', (requisicao, resposta)=> {
-    return resposta.send('Olá Mundo!')
-})
-
+server.use(express.json())
+server.use(router)
 
 export { server }
